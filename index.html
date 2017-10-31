@@ -1,0 +1,41 @@
+<html><head>
+  <title>Find it at OU</title>
+  <style>
+      .markdown-body {
+          box-sizing: border-box;
+          min-width: 200px;
+          max-width: 980px;
+          margin: 0 auto;
+          padding: 45px;
+      }
+    </style>
+<link rel="stylesheet" href="github-markdown.css">
+<link rel="stylesheet" href="github-highlight.css">
+<script src="/socket.io/socket.io.js"></script>
+<script>
+      var socket = io();
+      socket.on('markdown', function (msg) {
+        document.getElementById("markdown").innerHTML = msg;
+        var cursor = document.getElementById("instant-markdown-cursor");
+        if (cursor) {
+          cursor.scrollIntoView();
+        }
+      });
+      socket.on('disconnect', function() {
+        window.close();
+      })
+    </script>
+</head>
+
+<body>
+  <article id="markdown" class="markdown-body"><h1 id="find-it-at-ou">Find it at OU</h1>
+<p>Bookmarklet that tries to give you access to papers behind the paywall*.</p>
+<h1 id="how-to-install">How to install</h1>
+<p>Drag this link <a style="color: #ddd; font-size: 150%; font-weight: bold;" href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/angelosalatino/find-it-at-ou/master/convert-link.js';})();">Find it at OU</a> and drop it into your Bookmarks bar</p>
+<h1 id="try-and-see-how-it-works">Try and see how it works</h1>
+<p>Follow this paper http://www.sciencedirect.com/science/article/pii/S0950705117303271 and hit the button "Find it at OU" from your Bookmarks bar.</p>
+<p>* The paper will be accessible only if the OU does have a subscription for that venue.</p>
+</article>
+
+
+</body></html>
