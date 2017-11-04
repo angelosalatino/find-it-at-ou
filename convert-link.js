@@ -27,8 +27,10 @@ function convertLink(presentLink, mod){
 var myLocation = window.location.href;
 var mod = "libezproxy.open.ac.uk";
     
-if(myLocation.includes(mod)) alert("The link was already giving you access through the OU Library.");
-
-var newLink = convertLink(myLocation, mod);
-
-window.open(newLink,"_self")
+if(myLocation.includes(mod)){ 
+    alert("The link is already giving you access through the OU Library.");
+}
+else{
+    var newLink = convertLink(myLocation, mod);
+    window.open(newLink,"_self")
+}
