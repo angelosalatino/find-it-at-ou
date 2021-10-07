@@ -24,7 +24,7 @@
 }*/
 
 function convertLink(presentLink, mod){
-    return "https://libezproxy.open.ac.uk/login?url=".concat(presentLink);
+    return "https://".concat(mod,"/login?url=",presentLink);
 }
 
 var myLocation = window.location.href;
