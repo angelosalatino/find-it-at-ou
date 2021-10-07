@@ -11,7 +11,7 @@
     return   : futureLink  -> new edited link
     
 */
-function convertLink(presentLink, mod){
+/*function convertLink(presentLink, mod){
 
     var res = presentLink.split("//");
     var rfs = res[1].split("/");
@@ -21,8 +21,11 @@ function convertLink(presentLink, mod){
     futureLink = "http://"+rfs.join("/");
 
     return futureLink;
-}
+}*/
 
+function convertLink(presentLink, mod){
+    return "https://libezproxy.open.ac.uk/login?url=".concat(presentLink);
+}
 
 var myLocation = window.location.href;
 var mod = "libezproxy.open.ac.uk";
